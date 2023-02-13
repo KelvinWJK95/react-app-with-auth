@@ -35,7 +35,7 @@ class Signup extends React.Component {
         const formData = new FormData();
         formData.append("email", this.state.email);
         formData.append("password", this.state.password);
-        fetch("http://127.0.0.1:8081/register",{
+        fetch("http://35.192.17.83:81/register",{
             method: 'POST',
             body: formData
         })
