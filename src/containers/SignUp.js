@@ -68,7 +68,8 @@ class Signup extends React.Component {
         })
         .catch((error) => {
             this.setState({
-                error: "There was an error with the server"
+                error: "There was an error with the server",
+                disabled: false
             });
             console.log(error);
         });
