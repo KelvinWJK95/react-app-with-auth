@@ -10,10 +10,10 @@ class Logout extends React.Component {
   componentDidMount(){
     //removing authorization when this page is accessed
     const { cookies } = this.props;
-    cookies.remove("token")
+    cookies.remove("token", { path: '/'})
   }
   render(){
-    return <Navigate to="/"/>;
+    return <Navigate to="/home"/>;
   };
 }
 

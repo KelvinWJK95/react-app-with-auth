@@ -1,22 +1,19 @@
-import React from "react";
 
-class Input extends React.Component {
-    constructor(props){
-        super(props);
-    }
-    render(){
-        return <div style={{padding:"10px"}}>
+const Input = (props) => {
+    return (
+        <div style={{padding:"10px 50px"}}>
             <input
             required 
-            name={this.props.name}
-            type={this.props.type}
-            onChange={this.props.onChange}
-            onKeyDown={this.props.onKeyDown}
-            placeholder={this.props.placeholder}
-            style={{padding:"10px", width: "75%"}}
+            name={props.name}
+            type={props.type}
+            onChange={props.onChange}
+            onKeyDown={props.onKeyDown}
+            placeholder={props.placeholder}
+            style={{padding:"10px", width: "100%", boxSizing: "border-box"}}
             />
-        </div>;
-    }
+            {(props.error.hasError)?<div style={{textAlign:"left", fontSize:"11px", color:"red"}}>{props.error.message}</div>:<></>}
+        </div>
+    )
 }
 
 export default Input;

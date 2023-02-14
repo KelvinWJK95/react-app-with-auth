@@ -7,20 +7,41 @@ import Button from '../components/RoundedButton.js'
 class Signup extends React.Component {
     constructor(props){
         super(props);
-        this.state = {email:"", password:"", error:"", success:"", disabled:false};
+        this.state = {email:"", password:"", error:"", success:"", disabled:false,
+        errorMsg:{
+            email: { message:"", hasError:false },
+            password: { message:"", hasError:false }
+        }};
     }
     goBack = () => {
         this.props.navigation(-1)
     }
     validation = () => {
-        const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-        if(!this.state.email || regex.test(this.state.email) === false){
-            this.setState({
-                error: "Please enter a valid email"
-            });
-            return false;
+        let errorMsg = {
+            email: { message:"", hasError:false },
+            password: { message:"", hasError:false }
+        };
+        let noError = true;
+
+        const regex = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i
+        if(!this.state.email){
+            errorMsg.email = { message:"Please enter your email", hasError:true }
+            noError = false;
+        }else if(regex.test(this.state.email) === false){
+            errorMsg.email = { message:"Please enter a valid email", hasError:true }
+            noError = false;
         }
-        return true;
+
+        if(!this.state.password){
+            errorMsg.password = { message:"Please enter your password", hasError:true }
+            noError = false;
+        }
+
+        this.setState({
+            errorMsg:errorMsg
+        });
+
+        return noError
     }
     signUp = () => {
         if(!this.validation()){
@@ -30,11 +51,11 @@ class Signup extends React.Component {
         this.setState({
             error: "",
             disabled: true
-        });
+        })
         
-        const formData = new FormData();
-        formData.append("email", this.state.email);
-        formData.append("password", this.state.password);
+        const formData = new FormData()
+        formData.append("email", this.state.email)
+        formData.append("password", this.state.password)
         fetch("http://35.192.17.83:81/register",{
             method: 'POST',
             body: formData
@@ -81,24 +102,33 @@ class Signup extends React.Component {
     }
     handleChange = (event) => {
         this.setState({
-            [event.target.name]: event.target.value
+            [event.target.name]: event.target.value,
+            errorMsg:{
+                ...this.state.errorMsg,
+                [event.target.name]: {
+                    ...this.state.errorMsg[event.target.name], hasError:false
+                }
+            }
         });
     }
     render(){
-        return <div style={this.state.disabled?{pointerEvents:"none", opacity:"0.4"}:{}} className="Container">
+        return <div><div style={this.state.disabled?{pointerEvents:"none", opacity:"0.4"}:{}} className="Signup-container">
         <h1 style={{padding:"20px"}}>Sign Up</h1>
         <div style={{color:"red"}}>{this.state.error}</div>
         <div style={{color:"green", whiteSpace: "pre-line"}}>{this.state.success}</div>
-        <Input onChange={this.handleChange} name="email" placeholder="Email Address"/>
-        <Input onChange={this.handleChange} onKeyDown={this.handleKeyDown} name="password" type="password" placeholder="Password"/>
-        <Button name="Register" backgroundColor="#2AB2DE" onClick={this.signUp}/>
-        <a style={{cursor:"pointer", userSelect:"none", fontSize:"14px"}} onClick={this.goBack}>Back</a>
-        </div>;
+        <Input onChange={this.handleChange} name="email" placeholder="Email Address" error={this.state.errorMsg.email}/>
+        <Input onChange={this.handleChange} onKeyDown={this.handleKeyDown} name="password" type="password" placeholder="Password" error={this.state.errorMsg.password}/>
+        <Button name="Register" backgroundColor="#2AB2DE" width="80%" padding="10px"onClick={this.signUp}/>
+        <button  onClick={this.goBack} className="Clickable-text-button">Back</button>
+        <div style={{padding:"2rem"}}/>
+        </div></div>;
     }
 }
 
-export default function(props){
+function SignupWithNavigation(props){
     const navigation = useNavigate();
 
     return <Signup {...props} navigation={navigation}/>
 }
+ 
+export default SignupWithNavigation;

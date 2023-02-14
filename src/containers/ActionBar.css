@@ -1,0 +1,17 @@
+.Actionbar-container {
+  text-align: center;
+  background-color: white;
+  min-width: 200pt;
+  padding:0 1rem;
+}
+
+@media screen and (min-width: 60rem) {
+  .Actionbar-container{
+      border-radius: 0.75rem;
+      box-shadow: 0 0.3125rem 1rem -0.1875rem rgb(0 0 0 / 20%);
+      position:sticky;
+      position:-webkit-sticky;
+      top:1.5rem;
+  }
+  
+}

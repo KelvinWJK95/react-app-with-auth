@@ -1,0 +1,52 @@
+.Organization-container {
+    background-color: white;
+    max-width: 72rem;
+    display:grid;
+    grid-template-areas: 
+    "header"
+    "desc"
+    "sidebar"
+    "comment";
+  }
+
+  .Orginization-container-wrapper{
+    padding:1rem;
+    margin:1rem;
+  }
+
+  .Organization-header{
+    grid-area:header;
+  }
+  
+  .Organization-sidebar{
+    grid-area:sidebar;
+  }
+  
+  .Organization-desc{
+    grid-area:desc;
+    
+  }
+  
+  .Organization-comment{
+    grid-area:comment;
+    
+  }
+
+  .Organization-title{
+    margin-bottom: 0px;
+  }
+  
+
+  @media screen and (min-width: 60rem) {
+    .Organization-container {
+        grid-template-areas: 
+        "header header header"
+        "desc desc sidebar"
+        "comment comment  sidebar";
+      }
+
+    .Organization-sidebar{
+        margin-left: 3rem;
+    }
+    
+  }

@@ -1,26 +1,31 @@
 import './App.css';
-import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { Routes, Route, Navigate, useNavigate, useLocation } from "react-router-dom";
 import Login from './Login.js'
 import SignUp from './SignUp.js'
 import Home from './Home.js'
 import NotFound from './NotFound.js'
 import Logout from './Logout.js'
+import Organization from './Organization'
 import PrivateRoute from '../components/PrivateRoute'
 import PublicRoute from '../components/PublicRoute'
 import { GetCookie } from "../utils/Cookies.js";
 
 const App = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   function handleLogout(){
     navigate("/logout")
+  }
+  function handleLogin(){
+    navigate("/login")
   }
   return (
       <div className="App">
         <header className="App-header">
-          <div className="Logout-Section">
+          <div className="Logout-section">
           {GetCookie("token")
-          ?<a onClick={handleLogout} className="Clickable-Text">Logout</a>
-          :<></>}
+          ?<button onClick={handleLogout} className="Clickable-text-button">Logout</button>
+          :(location.pathname !== "/login"?<button onClick={handleLogin} className="Clickable-text-button">Login</button>:<></>) }
           </div>
         </header>
         <div className="App-body">
@@ -32,14 +37,19 @@ const App = () => {
               </Route>
               <Route path="/" element={<PrivateRoute/>}>
                 <Route path="home" element={<Home/>}/>
-                <Route path="logout" element={<Logout/>}/>
               </Route>
+              
+              <Route path="/org/:id" element={<Organization/>}>
+
+              </Route>
+
+              <Route path="/logout" element={<Logout/>}/>
               <Route path="*" element={<NotFound/>}/>
             </Routes>
         </div>
         <footer className="App-footer">
-          <div className="Description-Section">
-            <code>This website is coded using React.js that consumes API that is built with Golang web services</code>
+          <div className="Description-section">
+            <code>2023 @ This website is coded using React.js that consumes API that is built with Golang web services</code>
           </div>
         </footer>
       </div>

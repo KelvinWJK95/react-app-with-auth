@@ -1,6 +1,5 @@
 .App {
-  text-align: center;
-  background-color: #343841;
+  background-color: white;
 }
 
 .App-logo {
@@ -15,26 +14,25 @@
 }
 
 .App-header {
-  min-height: 15vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-
-.App-footer {
   min-height: 10vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+}
+
+
+.App-footer {
+  text-align: center;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
 }
 
 .App-body {
-  min-height: 75vh;
+  min-height: 80vh;
   display: flex;
   justify-content: center;
 }
@@ -43,23 +41,35 @@
   color: #61dafb;
 }
 
-.Clickable-Text{
+.Clickable-text-button{
+  border:0px;
+  font-family: inherit;
+  background-color: inherit;
   cursor: pointer;
   user-select: none;
   font-size: 14px;
 }
 
-.Logout-Section{
+.Clickable-text-button-white{
+  border: 0px;
+  background-color: inherit;
+  font-size: 14px;
+  color: white;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.Logout-section{
   display: flex;
   justify-content: flex-end;
   padding:1rem;
 }
 
-.Logout-Section a{
+.Logout-section button{
   margin: 0 3rem;
 }
 
-.Description-Section{
+.Description-section{
   font-size: 11px;
 }
 
