@@ -126,7 +126,7 @@ class Login extends React.Component {
         <Input onChange={this.handleChange} name="email" placeholder="Email Address" error={this.state.errorMsg.email}/>
         <Input onChange={this.handleChange} onKeyDown={this.handleKeyDown} name="password" type="password" placeholder="Password" error={this.state.errorMsg.password}/>
         <Button name="Login" backgroundColor="#2ADE9A" width="80%" padding="10px" onClick={this.login}/>
-        <button onClick={this.signUp} className="Clickable-text-button">Sign Up</button>
+        <span onClick={this.signUp} className="Clickable-text-button">Sign Up</span>
         <div style={{padding:"2rem"}}/>
         </div></div>;
     }

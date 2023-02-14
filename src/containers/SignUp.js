@@ -119,7 +119,7 @@ class Signup extends React.Component {
         <Input onChange={this.handleChange} name="email" placeholder="Email Address" error={this.state.errorMsg.email}/>
         <Input onChange={this.handleChange} onKeyDown={this.handleKeyDown} name="password" type="password" placeholder="Password" error={this.state.errorMsg.password}/>
         <Button name="Register" backgroundColor="#2AB2DE" width="80%" padding="10px"onClick={this.signUp}/>
-        <button  onClick={this.goBack} className="Clickable-text-button">Back</button>
+        <span  onClick={this.goBack} className="Clickable-text-button">Back</span>
         <div style={{padding:"2rem"}}/>
         </div></div>;
     }

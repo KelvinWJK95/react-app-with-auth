@@ -2,7 +2,6 @@
   text-align: center;
   background-color: white;
   width: 300pt;
-  padding:20px;
 }
 
 
@@ -10,6 +9,6 @@
   .Login-container {
     border-radius: 0.75rem;
     box-shadow: 0 0.3125rem 1rem -0.1875rem rgb(0 0 0 / 20%);
-    
+    padding:20px;
   }
 }

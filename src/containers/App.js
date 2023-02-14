@@ -24,8 +24,8 @@ const App = () => {
         <header className="App-header">
           <div className="Logout-section">
           {GetCookie("token")
-          ?<button onClick={handleLogout} className="Clickable-text-button">Logout</button>
-          :(location.pathname !== "/login"?<button onClick={handleLogin} className="Clickable-text-button">Login</button>:<></>) }
+          ?<span onClick={handleLogout} className="Clickable-text-button">Logout</span>
+          :(location.pathname !== "/login"?<span onClick={handleLogin} className="Clickable-text-button">Login</span>:<></>) }
           </div>
         </header>
         <div className="App-body">
