@@ -26,7 +26,7 @@ class Organization extends React.Component {
             </div>
             
             <div className="Organization-desc">
-                <h2>Description</h2>
+                <h2>What they do</h2>
                 <p className="Wrap-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel auctor ligula. Proin dictum pulvinar neque ultricies iaculis. Suspendisse accumsan, leo ac finibus interdum, neque ligula scelerisque augue, quis ornare ante lectus ac ipsum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean convallis congue nisi eu vulputate. Vestibulum feugiat sollicitudin sapien, quis accumsan lacus fermentum non. Suspendisse potenti. Cras dignissim varius tortor, nec fringilla nisl vehicula et. Morbi sit amet erat in lectus elementum mollis in sit amet turpis. Sed quis turpis mi. Praesent euismod, urna nec vulputate volutpat, dolor magna consequat libero, quis rhoncus nibh lectus gravida massa. Etiam ac convallis neque, sed euismod magna. Nulla quis blandit lacus, sit amet euismod neque. Ut lacus tortor, placerat a bibendum at, ultricies ac massa. Etiam eget bibendum odio. Integer finibus, lorem sit amet laoreet tempor, erat risus sodales tortor, luctus rhoncus quam ipsum id velit.</p>
 
             </div>

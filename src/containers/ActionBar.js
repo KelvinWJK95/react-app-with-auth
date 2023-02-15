@@ -14,7 +14,7 @@ class ActionBar extends React.Component {
         <UserDisplay user="Anonymous" amount="$100"/>
         <UserDisplay user="Anonymous" amount="$1,000"/>
         <div style={{padding:"0.2rem"}}/>
-        <Button name="Give" width="100%" padding="6px"  backgroundColor="rgb(161 83 247)"/>
+        <Button name="Give Now" width="100%" padding="6px"  backgroundColor="rgb(161 83 247)"/>
         <Button name="Pledge" width="100%" padding="6px"  backgroundColor="rgb(137 42 241)"/>
         <div style={{padding:"0.8rem"}}/>
         </div>;
