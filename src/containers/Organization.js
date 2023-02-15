@@ -8,11 +8,11 @@ class Organization extends React.Component {
     
     constructor(props){
         super(props);
-        this.state = {imageLoaded:false};
+        this.state = {imageLoaded:"Placeholder-pic"};
     }
     handleImageLoad = () =>{
         this.setState({
-            imageLoaded: true
+            imageLoaded: "Organization-image"
         });
     }
     render(){
@@ -22,8 +22,7 @@ class Organization extends React.Component {
             </div>
 
             <div className="Organization-pic">
-                {!this.state.imageLoaded?<div className="Placeholder-pic"/>:<></>}
-                <img onLoad={this.handleImageLoad} className="Organization-image" src={PlaceholderImage}  alt="placeholderImage"/>
+                <img onLoad={this.handleImageLoad} className={this.state.imageLoaded} src={PlaceholderImage}  alt="placeholderImage"/>
             </div>
             
             <div className="Organization-desc">
