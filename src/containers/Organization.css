@@ -1,52 +1,85 @@
 .Organization-container {
     background-color: white;
     max-width: 72rem;
-    display:grid;
+    display: grid;
     grid-template-areas: 
     "header"
+    "pic"
     "desc"
     "sidebar"
     "comment";
   }
 
-  .Orginization-container-wrapper{
-    padding:1rem;
-    margin:1rem;
+  .Organization-pic{
+    grid-area: pic;
   }
-
+  
   .Organization-header{
-    grid-area:header;
+    grid-area: header;
   }
   
   .Organization-sidebar{
-    grid-area:sidebar;
+    grid-area: sidebar;
   }
   
   .Organization-desc{
-    grid-area:desc;
+    
+    max-width: 72rem;
+    grid-area: desc;
     
   }
   
   .Organization-comment{
-    grid-area:comment;
+    grid-area: comment;
     
   }
 
   .Organization-title{
-    margin-bottom: 0px;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
+  }
+
+  .Organization-image{
+    width: 100%;
+    height: auto;
   }
   
+  .Wrap-text{
+    overflow: hidden;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
 
   @media screen and (min-width: 60rem) {
     .Organization-container {
         grid-template-areas: 
         "header header header"
+        "pic pic sidebar"
         "desc desc sidebar"
         "comment comment  sidebar";
-      }
+    }
 
     .Organization-sidebar{
         margin-left: 3rem;
+    }
+
+    .Orginization-container-wrapper{
+      margin: 1rem;
+      padding: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 60rem) {
+    .Organization-header{
+      padding: 1rem;
+    }
+    
+    .Organization-desc{
+      padding: 1rem;
+    }
+    
+    .Organization-comment{
+      padding: 1rem;
     }
     
   }

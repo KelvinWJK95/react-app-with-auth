@@ -60,7 +60,9 @@
   padding:1rem;
 }
 
-
+.Logout-section span{
+  margin: 0 1rem;
+}
 
 @media screen and (min-width: 45rem) {
   .Logout-section span{
