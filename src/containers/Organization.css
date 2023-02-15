@@ -5,8 +5,8 @@
     grid-template-areas: 
     "header"
     "pic"
-    "desc"
     "sidebar"
+    "desc"
     "comment";
   }
 
@@ -14,6 +14,14 @@
     grid-area: pic;
   }
   
+  .Placeholder-pic{
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 50%;
+    background-color: rgb(226, 226, 226);
+  }
+
   .Organization-header{
     grid-area: header;
   }
@@ -42,8 +50,39 @@
   .Organization-image{
     width: 100%;
     height: auto;
+    
+    animation: fadeIn 1s;
+    -webkit-animation: fadeIn 1s;
+    -moz-animation: fadeIn 1s;
+    -o-animation: fadeIn 1s;
+    -ms-animation: fadeIn 1s;
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
   }
   
+  @-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
   .Wrap-text{
     overflow: hidden;
     overflow-wrap: break-word;

@@ -5,6 +5,16 @@ import CommentBoard from './CommentBoard.js'
 import PlaceholderImage from "../images/church.jpg"
 
 class Organization extends React.Component {
+    
+    constructor(props){
+        super(props);
+        this.state = {imageLoaded:false};
+    }
+    handleImageLoad = () =>{
+        this.setState({
+            imageLoaded: true
+        });
+    }
     render(){
         return <div className="Orginization-container-wrapper"><div className="Organization-container">
             <div className="Organization-header">
@@ -12,7 +22,8 @@ class Organization extends React.Component {
             </div>
 
             <div className="Organization-pic">
-                <img className="Organization-image" src={PlaceholderImage}  alt="placeholderImage"/>
+                {!this.state.imageLoaded?<div className="Placeholder-pic"/>:<></>}
+                <img onLoad={this.handleImageLoad} className="Organization-image" src={PlaceholderImage}  alt="placeholderImage"/>
             </div>
             
             <div className="Organization-desc">
