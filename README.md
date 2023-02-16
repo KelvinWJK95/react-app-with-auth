@@ -1,1 +1,1 @@
-# react-app-with-auth
+# react-app-with-auth (Abandoned)
